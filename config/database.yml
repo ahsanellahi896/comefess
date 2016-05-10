@@ -20,6 +20,8 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+  password: postgres
 
 development:
   <<: *default
@@ -81,5 +83,4 @@ test:
 production:
   <<: *default
   database: comefess_production
-  username: comefess
-  password: <%= ENV['COMEFESS_DATABASE_PASSWORD'] %>
+  password: 1_dev(r)!all
